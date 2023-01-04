@@ -1,0 +1,20 @@
+---
+name: build and push
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: configure environment
+        id: name
+        run: |-
+          echo "GITHUB_SHA_SHORT=${GITHUB_SHA::8}" >> $GITHUB_ENV
+          echo "TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: build
+        run: |-
+          sleep 120
