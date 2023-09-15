@@ -9,7 +9,7 @@ concurrency:
 jobs:
   build-and-push:
     runs-on:
-      - scale-set
+      - self-hosted
     steps:
       - name: configure environment
         id: name
