@@ -9,7 +9,7 @@ concurrency:
 jobs:
   build-and-push:
     runs-on:
-      - self-hosted
+      - arc-runner-set
     steps:
       - name: configure environment
         id: name
