@@ -9,7 +9,7 @@ concurrency:
 jobs:
   build-and-push:
     runs-on:
-      - arc-runner-set
+      - scale-set
     steps:
       - name: configure environment
         id: name
