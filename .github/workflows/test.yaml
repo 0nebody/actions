@@ -1,0 +1,24 @@
+---
+name: test
+on: # yamllint disable-line rule:truthy
+  pull_request:
+jobs:
+  test:
+    runs-on:
+      - self-hosted
+    steps:
+      - uses: actions/checkout@master
+      - uses: alexellis/arkade-get@master
+        with:
+          flux: v2.3.0
+          helm: latest
+          kind: v0.24.0
+          kubectl: v1.29.9
+      - name: flux version
+        run: flux version
+      - name: helm version
+        run: helm version
+      - name: kind version
+        run: kind version
+      - name: kubectl version
+        run: kubectl version --client
