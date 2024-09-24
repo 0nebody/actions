@@ -14,9 +14,9 @@ jobs:
           kind: v0.24.0
           kubectl: v1.29.9
       - name: flux version
-        run: flux version
+        run: flux version --client
       - name: helm version
-        run: helm version
+        run: helm version --client
       - name: kind version
         run: kind version
       - name: kubectl version
